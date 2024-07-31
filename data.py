@@ -17,7 +17,7 @@ class MNISTDataModule:
         transform = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize((0.1307,), (0.3081,)),
-            transforms.Resize((32, 32))
+            transforms.Resize((32, 32), antialias=True)
         ])
 
         mnist_train = MNIST(DATA_DIR, train=True, transform=transform, download=True)
